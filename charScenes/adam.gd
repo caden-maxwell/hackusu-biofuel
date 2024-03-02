@@ -3,20 +3,31 @@ extends CharacterBody2D
 enum CHAR_STATE { IDLE, RUN, SIT, DRINK }
 
 @export var move_speed : float = 20
+@export var walk_time : float = 2
+@export var current_state : CHAR_STATE = CHAR_STATE.IDLE
+
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
+@onready var timer = $Timer
 
 var move_direction : Vector2 = Vector2.ZERO
-var current_state : CHAR_STATE = CHAR_STATE.IDLE
+
 
 func _ready():
+	pick_new_state(CHAR_STATE.IDLE)
+	move()
+
+func move():
 	select_new_direction()
-	pick_new_state(CHAR_STATE.RUN)
+	timer.start(walk_time)
 
 func _physics_process(_delta):
-	velocity = move_direction * move_speed
-	move_and_slide()
+	if(current_state == CHAR_STATE.RUN):
+		velocity = move_direction * move_speed
+		move_and_slide()
+
+
 
 func select_new_direction():
 	move_direction = Vector2(
@@ -44,3 +55,7 @@ func pick_new_state(state : CHAR_STATE):
 		state_machine.travel("Sit")
 	elif(state == CHAR_STATE.DRINK):
 		state_machine.travel("Drink")
+
+
+func _on_timer_timeout():
+	move()
