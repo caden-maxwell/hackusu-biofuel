@@ -19,9 +19,9 @@ func _ready():
 	move()
 
 func move():
+	select_new_direction()
 	if changes_state:
 		pick_new_state()
-		select_new_direction()
 	timer.start(walk_time)
 
 func _physics_process(_delta):
