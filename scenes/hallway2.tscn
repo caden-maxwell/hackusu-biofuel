@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw2e7ksd5y2fa"]
+[gd_scene load_steps=14 format=3 uid="uid://bw2e7ksd5y2fa"]
 
 [ext_resource type="Texture2D" uid="uid://dc585tyt62ms" path="res://assets/Modern_Office_Revamped/1_Room_Builder_Office/Room_Builder_Office_16x16.png" id="1_f1vq6"]
 [ext_resource type="Texture2D" uid="uid://bf7iw03gxwu5v" path="res://assets/Modern_Office_Revamped/2_Modern_Office_Black_Shadow/Modern_Office_Black_Shadow.png" id="2_1ey2y"]
 [ext_resource type="Texture2D" uid="uid://dildaeoh11r3k" path="res://assets/Modern_Office_Revamped/3_Modern_Office_Shadowless/Modern_Office_Shadowless_16x16.png" id="3_r57j4"]
+[ext_resource type="PackedScene" uid="uid://dadw8yb78v5qy" path="res://charScenes/player.tscn" id="4_885k5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n67a"]
 texture = ExtResource("1_f1vq6")
@@ -2788,6 +2789,9 @@ texture = ExtResource("3_r57j4")
 sources/0 = SubResource("TileSetAtlasSource_emiln")
 sources/1 = SubResource("TileSetAtlasSource_5fovr")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dtyns"]
+radius = 6.0
+
 [node name="Hallway2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -2811,3 +2815,14 @@ polygon = PackedVector2Array(-102, -16, -80, -15, -81, 0, 160, 0, 160, -15, 186,
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-106, -34, -80, -33, -81, -43, -69, -42, -65, -45, -65, -49, -48, -49, -48, -41, -31, -41, -31, -49, -16, -49, -16, -41, 0, -41, 0, -49, 16, -49, 16, -42, 33, -42, 32, -48, 64, -49, 64, -63, 80, -64, 80, -49, 111, -49, 112, -41, 128, -41, 129, -48, 145, -48, 147, -43, 156, -43, 161, -42, 161, -33, 187, -34, 175, -82, 80, -84, -87, -85, -93, -43)
+
+[node name="Player" parent="." instance=ExtResource("4_885k5")]
+position = Vector2(-13, -16)
+rotation = -0.00113346
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_dtyns")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
