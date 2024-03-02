@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://0q4rvgqhjou1"]
+[gd_scene load_steps=13 format=3 uid="uid://c4oa04laaufqk"]
 
 [ext_resource type="Texture2D" uid="uid://dc585tyt62ms" path="res://assets/Modern_Office_Revamped/1_Room_Builder_Office/Room_Builder_Office_16x16.png" id="1_oors4"]
 [ext_resource type="Texture2D" uid="uid://bf7iw03gxwu5v" path="res://assets/Modern_Office_Revamped/2_Modern_Office_Black_Shadow/Modern_Office_Black_Shadow.png" id="2_g4t1j"]
@@ -1118,6 +1118,7 @@ texture = ExtResource("2_g4t1j")
 6:7/0 = 0
 6:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:7/0/physics_layer_0/angular_velocity = 0.0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -5.625, 3.5, 5.375, 3.25, 6.75, 8)
 9:7/0 = 0
 9:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:7/0/physics_layer_0/angular_velocity = 0.0
@@ -1148,6 +1149,7 @@ texture = ExtResource("2_g4t1j")
 6:8/0 = 0
 6:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:8/0/physics_layer_0/angular_velocity = 0.0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.125, -8, 4.625, -8, 8, -2.125, 5.25, 8, -4.75, 8, -8, -0.5)
 7:8/0 = 0
 7:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:8/0/physics_layer_0/angular_velocity = 0.0
@@ -1196,6 +1198,7 @@ texture = ExtResource("2_g4t1j")
 6:9/0 = 0
 6:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:9/0/physics_layer_0/angular_velocity = 0.0
+6:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.625, -2.125, -4.25, -9.25, 3.875, -9, 3, -2.125)
 7:9/0 = 0
 7:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:9/0/physics_layer_0/angular_velocity = 0.0
@@ -8681,6 +8684,7 @@ sources/0 = SubResource("TileSetAtlasSource_3a2fb")
 sources/1 = SubResource("TileSetAtlasSource_i8c5f")
 
 [node name="Lobby" type="Node2D"]
+position = Vector2(2, 0)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
