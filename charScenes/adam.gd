@@ -15,7 +15,7 @@ var move_direction : Vector2 = Vector2.ZERO
 
 
 func _ready():
-	pick_new_state(CHAR_STATE.IDLE)
+	pick_new_state(current_state)
 	move()
 
 func move():
