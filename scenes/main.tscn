@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://cid5pnsdqpi83"]
+
+[ext_resource type="PackedScene" uid="uid://pbviugntfmin" path="res://scenes/cafeteria.tscn" id="1_5detu"]
+[ext_resource type="PackedScene" uid="uid://0q4rvgqhjou1" path="res://scenes/lobby.tscn" id="1_7yx6m"]
+[ext_resource type="PackedScene" uid="uid://f5142urxkaoh" path="res://scenes/hallway1.tscn" id="2_5iscw"]
+[ext_resource type="PackedScene" uid="uid://dupixcsetst3g" path="res://scenes/office2.tscn" id="3_ptxc6"]
+[ext_resource type="PackedScene" uid="uid://cu20mv3f42tt1" path="res://scenes/office1.tscn" id="4_6xdpq"]
+[ext_resource type="PackedScene" uid="uid://rr3x5jm3eaxl" path="res://scenes/lab1.tscn" id="5_lo0ie"]
+[ext_resource type="PackedScene" uid="uid://bw2e7ksd5y2fa" path="res://scenes/hallway2.tscn" id="6_0smoa"]
+[ext_resource type="PackedScene" uid="uid://cfx6h0naamcty" path="res://scenes/awakening.tscn" id="7_g5h15"]
+[ext_resource type="PackedScene" uid="uid://dadw8yb78v5qy" path="res://charScenes/player.tscn" id="8_vrutl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_520ni"]
+radius = 6.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Office3" parent="." instance=ExtResource("4_6xdpq")]
+position = Vector2(784, 99)
+
+[node name="Lobby" parent="." instance=ExtResource("1_7yx6m")]
+position = Vector2(1196, -21)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Lobby"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Lobby/StaticBody2D2"]
+position = Vector2(4, 105)
+polygon = PackedVector2Array(66, 47, 67, 55, 44, 55, 46, 47)
+
+[node name="Cafeteria" parent="." instance=ExtResource("1_5detu")]
+position = Vector2(960, -187)
+
+[node name="Hallway3" parent="." instance=ExtResource("2_5iscw")]
+position = Vector2(832, -29)
+
+[node name="Office2" parent="." instance=ExtResource("3_ptxc6")]
+position = Vector2(640, -189)
+
+[node name="Office1" parent="." instance=ExtResource("4_6xdpq")]
+position = Vector2(416, 99)
+
+[node name="Hallway1" parent="." instance=ExtResource("2_5iscw")]
+position = Vector2(464, -29)
+
+[node name="Lab1" parent="." instance=ExtResource("5_lo0ie")]
+position = Vector2(176, -155)
+
+[node name="Hallway2" parent="." instance=ExtResource("6_0smoa")]
+position = Vector2(176, 3)
+
+[node name="Awakening" parent="." instance=ExtResource("7_g5h15")]
+position = Vector2(0, -45)
+
+[node name="Player" parent="." instance=ExtResource("8_vrutl")]
+y_sort_enabled = true
+position = Vector2(-41, 27)
+rotation = -0.00113346
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_520ni")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
