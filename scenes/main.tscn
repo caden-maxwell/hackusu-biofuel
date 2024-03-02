@@ -121,6 +121,7 @@ current_state = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_nl3o7")
+volume_db = -5.0
 autoplay = true
 
 [connection signal="d_finished" from="Amelia-Dialogue/Dialogue" to="Amelia-Dialogue" method="_on_dialogue_d_finished"]
