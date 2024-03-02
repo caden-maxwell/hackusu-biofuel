@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://f5142urxkaoh"]
+[gd_scene load_steps=5 format=3 uid="uid://f5142urxkaoh"]
 
 [ext_resource type="Texture2D" uid="uid://dc585tyt62ms" path="res://assets/Modern_Office_Revamped/1_Room_Builder_Office/Room_Builder_Office_16x16.png" id="1_kkvq2"]
 [ext_resource type="PackedScene" uid="uid://dadw8yb78v5qy" path="res://charScenes/player.tscn" id="2_rodvm"]
@@ -163,9 +163,6 @@ texture = ExtResource("1_kkvq2")
 [sub_resource type="TileSet" id="TileSet_7po2m"]
 sources/0 = SubResource("TileSetAtlasSource_20wjd")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_thkcv"]
-radius = 6.0
-
 [node name="Hallway1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -187,10 +184,6 @@ polygon = PackedVector2Array(-113, -1, -96, -1, -96, -33, -32, -33, -32, -48, -1
 [node name="Player" parent="." instance=ExtResource("2_rodvm")]
 position = Vector2(60, 16)
 rotation = -0.00113346
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_thkcv")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
