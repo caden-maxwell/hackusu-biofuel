@@ -6,13 +6,36 @@ extends CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
+@onready var hitSound = $HitSound
+@onready var goodSound = $GoodSound
+@onready var healthBar = $HealthBar
+
+const MAX_HEALTH = 100
+var health = MAX_HEALTH
+var isAlive = true
+
 
 func _ready():
 	update_animation_param(starting_direction)
+	update_health_ui()
+	healthBar.max_value = MAX_HEALTH
+
+func update_health_ui():
+	healthBar.value = health
+
+func damage():
+	health -= 1
+	update_health_ui()
+	if health <= 0 :
+		isAlive = false
+		$CanvasLayer/PanelContainer.visible = true
+	
 
 func _input(event):
+	if event.is_action_pressed("down")||event.is_action_pressed("up")||event.is_action_pressed("left")||event.is_action_pressed("right"):
+		damage()	
 	if event.is_action_pressed("attack"):
-		$HitSound.play()
+		hitSound.play()
 
 func _physics_process(_delta):
 	# input

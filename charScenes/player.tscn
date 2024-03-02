@@ -1,9 +1,10 @@
-[gd_scene load_steps=79 format=3 uid="uid://dadw8yb78v5qy"]
+[gd_scene load_steps=81 format=3 uid="uid://dadw8yb78v5qy"]
 
 [ext_resource type="Script" path="res://charScenes/player.gd" id="1_grs3c"]
 [ext_resource type="Texture2D" uid="uid://dccif27ilprmj" path="res://assets/characters/Robot_idle_anim_16x16.png" id="2_d6kd1"]
 [ext_resource type="Texture2D" uid="uid://e6f34x0dqupk" path="res://assets/characters/Robot_run_16x16.png" id="3_t1k4p"]
 [ext_resource type="AudioStream" uid="uid://b8pqh2c5r0e3b" path="res://assets/sounds/hitHurt.wav" id="4_x532v"]
+[ext_resource type="AudioStream" uid="uid://ey2sp1nlkb5t" path="res://assets/sounds/synth.wav" id="5_ohhvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acvkr"]
 size = Vector2(10, 4)
@@ -584,6 +585,8 @@ states/Run/node = SubResource("AnimationNodeBlendSpace2D_qxtoi")
 states/Run/position = Vector2(545.5, 99.5)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_mlyjt"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_skyxl"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_tsk6c")]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ckid"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_grs3c")
 
@@ -611,3 +614,31 @@ parameters/Run/blend_position = Vector2(0, 0)
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_x532v")
+
+[node name="GoodSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ohhvj")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -9.0
+offset_top = -19.0
+offset_right = 10.0
+offset_bottom = -15.0
+show_percentage = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5ckid")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
