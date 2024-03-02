@@ -330,6 +330,7 @@ states/Sit/position = Vector2(351, 228)
 states/drink/node = SubResource("AnimationNodeAnimation_svyyq")
 states/drink/position = Vector2(507, 229)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k30ga"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_mhbfy"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_qracx"), "Sit", "Idle", SubResource("AnimationNodeStateMachineTransition_geiws"), "Idle", "Sit", SubResource("AnimationNodeStateMachineTransition_stdg0"), "Sit", "drink", SubResource("AnimationNodeStateMachineTransition_t6t0j"), "drink", "Sit", SubResource("AnimationNodeStateMachineTransition_qbj6q"), "drink", "Run", SubResource("AnimationNodeStateMachineTransition_7vrsh"), "Run", "drink", SubResource("AnimationNodeStateMachineTransition_dysdi"), "drink", "Idle", SubResource("AnimationNodeStateMachineTransition_1th5u"), "Idle", "drink", SubResource("AnimationNodeStateMachineTransition_5ub3q")]
+graph_offset = Vector2(-215, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74e2a"]
 atlas = ExtResource("2_7wsbt")
