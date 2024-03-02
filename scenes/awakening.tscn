@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dc585tyt62ms" path="res://assets/Modern_Office_Revamped/1_Room_Builder_Office/Room_Builder_Office_16x16.png" id="1_vw88b"]
 [ext_resource type="Texture2D" uid="uid://bf7iw03gxwu5v" path="res://assets/Modern_Office_Revamped/2_Modern_Office_Black_Shadow/Modern_Office_Black_Shadow.png" id="2_6xuc2"]
 [ext_resource type="Texture2D" uid="uid://dildaeoh11r3k" path="res://assets/Modern_Office_Revamped/3_Modern_Office_Shadowless/Modern_Office_Shadowless_16x16.png" id="3_lt7yt"]
-[ext_resource type="PackedScene" uid="uid://dadw8yb78v5qy" path="res://scenes/player.tscn" id="4_26w1k"]
+[ext_resource type="PackedScene" uid="uid://dadw8yb78v5qy" path="res://charScenes/player.tscn" id="4_26w1k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akmf5"]
 texture = ExtResource("2_6xuc2")
