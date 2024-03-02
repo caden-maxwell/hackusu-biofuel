@@ -231,71 +231,71 @@ _data = {
 "sit_right": SubResource("Animation_wu2gi")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_40m3v"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_svyyq"]
+animation = &"drink"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w7xbu"]
 animation = &"idle_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6uywo"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8tlr4"]
 animation = &"idle_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nrri4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e60ws"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f3sos"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7x5ae"]
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_sr3n4"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_40m3v")
+blend_point_0/node = SubResource("AnimationNodeAnimation_w7xbu")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_6uywo")
+blend_point_1/node = SubResource("AnimationNodeAnimation_8tlr4")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_nrri4")
+blend_point_2/node = SubResource("AnimationNodeAnimation_e60ws")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_f3sos")
+blend_point_3/node = SubResource("AnimationNodeAnimation_7x5ae")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j4t3m"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h7uj5"]
 animation = &"run_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w0kyd"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f1xbb"]
 animation = &"run_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nopo4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mr77e"]
 animation = &"run_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_12rml"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jg46o"]
 animation = &"run_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_8c5ne"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_j4t3m")
+blend_point_0/node = SubResource("AnimationNodeAnimation_h7uj5")
 blend_point_0/pos = Vector2(0, 1.1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_w0kyd")
+blend_point_1/node = SubResource("AnimationNodeAnimation_f1xbb")
 blend_point_1/pos = Vector2(0, -1.1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_nopo4")
+blend_point_2/node = SubResource("AnimationNodeAnimation_mr77e")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_12rml")
+blend_point_3/node = SubResource("AnimationNodeAnimation_jg46o")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s8r7o"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6xob1"]
 animation = &"sit_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xnd5k"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_trdx0"]
 animation = &"sit_right"
 
 [sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_vewft"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_s8r7o")
+blend_point_0/node = SubResource("AnimationNodeAnimation_6xob1")
 blend_point_0/pos = -1.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_xnd5k")
+blend_point_1/node = SubResource("AnimationNodeAnimation_trdx0")
 blend_point_1/pos = 1.0
 blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_svyyq"]
-animation = &"drink"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k30ga"]
 advance_mode = 2
@@ -321,15 +321,15 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5ub3q"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_pld0i"]
+states/Drink/node = SubResource("AnimationNodeAnimation_svyyq")
+states/Drink/position = Vector2(507, 229)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_sr3n4")
 states/Idle/position = Vector2(352.5, 101.75)
 states/Run/node = SubResource("AnimationNodeBlendSpace2D_8c5ne")
 states/Run/position = Vector2(502, 100.875)
 states/Sit/node = SubResource("AnimationNodeBlendSpace1D_vewft")
 states/Sit/position = Vector2(351, 228)
-states/drink/node = SubResource("AnimationNodeAnimation_svyyq")
-states/drink/position = Vector2(507, 229)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k30ga"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_mhbfy"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_qracx"), "Sit", "Idle", SubResource("AnimationNodeStateMachineTransition_geiws"), "Idle", "Sit", SubResource("AnimationNodeStateMachineTransition_stdg0"), "Sit", "drink", SubResource("AnimationNodeStateMachineTransition_t6t0j"), "drink", "Sit", SubResource("AnimationNodeStateMachineTransition_qbj6q"), "drink", "Run", SubResource("AnimationNodeStateMachineTransition_7vrsh"), "Run", "drink", SubResource("AnimationNodeStateMachineTransition_dysdi"), "drink", "Idle", SubResource("AnimationNodeStateMachineTransition_1th5u"), "Idle", "drink", SubResource("AnimationNodeStateMachineTransition_5ub3q")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_k30ga"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_mhbfy"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_qracx"), "Sit", "Idle", SubResource("AnimationNodeStateMachineTransition_geiws"), "Idle", "Sit", SubResource("AnimationNodeStateMachineTransition_stdg0"), "Sit", "Drink", SubResource("AnimationNodeStateMachineTransition_t6t0j"), "Drink", "Sit", SubResource("AnimationNodeStateMachineTransition_qbj6q"), "Drink", "Run", SubResource("AnimationNodeStateMachineTransition_7vrsh"), "Run", "Drink", SubResource("AnimationNodeStateMachineTransition_dysdi"), "Drink", "Idle", SubResource("AnimationNodeStateMachineTransition_1th5u"), "Idle", "Drink", SubResource("AnimationNodeStateMachineTransition_5ub3q")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74e2a"]
 atlas = ExtResource("2_7wsbt")

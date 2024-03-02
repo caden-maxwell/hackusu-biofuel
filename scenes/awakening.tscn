@@ -12305,6 +12305,7 @@ layer_0/tile_data = PackedInt32Array(-196612, 655361, 5, -196611, 720897, 5, -19
 y_sort_enabled = true
 tile_set = SubResource("TileSet_1suy1")
 format = 2
+layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(131068, 65538, 27, 196604, 65538, 28, 131069, 131074, 27, 196605, 131074, 28, 65534, 196610, 26, 131070, 196610, 27, 196606, 196610, 28)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap2"]
@@ -12316,12 +12317,14 @@ polygon = PackedVector2Array(-63, 33, 15, 33, 15, 37, -64, 36)
 y_sort_enabled = true
 tile_set = SubResource("TileSet_5hx2x")
 format = 2
+layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(196604, 655362, 28, 262140, 655362, 29, 196605, 720898, 28, 262141, 720898, 29, 196606, 786434, 28, 262142, 786434, 29, -65539, 65538, 41, -3, 65538, 42, -65538, 131074, 41, -2, 131074, 42, -131075, 2, 40, -131074, 65538, 40, -262141, 458754, 37, -196605, 458754, 38, -131069, 458754, 39, 65535, 458754, 15, 131071, 458754, 16, 196607, 458754, 17, 0, 524290, 15, 65536, 524290, 16, 131072, 524290, 17, -327683, 589826, 14, -262147, 589826, 15, -327682, 655362, 14, -262146, 655362, 15, -196606, 720898, 13, -131070, 720898, 14)
 
 [node name="TileMap4" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_6ljvc")
 format = 2
+layer_0/y_sort_enabled = true
 layer_0/tile_data = PackedInt32Array(-131075, 524290, 34, -65539, 524290, 35, -131074, 720898, 35, -65538, 720898, 36, -2, 720898, 37, -196605, 65538, 14, 262147, 851970, 4, 196609, 851970, 4, 1, 851970, 4)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
