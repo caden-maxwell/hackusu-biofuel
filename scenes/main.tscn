@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cpfxefvk5co8g"]
+[gd_scene load_steps=18 format=3 uid="uid://cpfxefvk5co8g"]
 
 [ext_resource type="PackedScene" uid="uid://pbviugntfmin" path="res://scenes/cafeteria.tscn" id="1_5detu"]
 [ext_resource type="PackedScene" uid="uid://c4oa04laaufqk" path="res://scenes/lobby.tscn" id="1_7yx6m"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://charScenes/npcdialogue.gd" id="12_spsey"]
 [ext_resource type="PackedScene" uid="uid://cr07g7lgnw6gl" path="res://charScenes/bob.tscn" id="13_thmlp"]
 [ext_resource type="PackedScene" uid="uid://bh5v2l510hfkr" path="res://dialogue/dialogue.tscn" id="13_y3r1s"]
+[ext_resource type="AudioStream" uid="uid://kifipvkxco7q" path="res://assets/sounds/castle-unknown.ogg" id="16_xaeok"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ku6ja"]
 radius = 31.0644
@@ -105,6 +106,7 @@ position = Vector2(426, 126)
 [node name="Adam2" parent="." instance=ExtResource("10_ckre7")]
 position = Vector2(760, -21)
 current_state = 1
+changes_state = true
 
 [node name="Bob3" parent="." instance=ExtResource("13_thmlp")]
 position = Vector2(635, -147)
@@ -117,6 +119,24 @@ current_state = 1
 [node name="Amelia" parent="." instance=ExtResource("11_gmb33")]
 position = Vector2(1254, 11)
 current_state = 1
+
+[node name="Adam3" parent="." instance=ExtResource("10_ckre7")]
+position = Vector2(579, -36)
+changes_state = true
+
+[node name="Adam4" parent="." instance=ExtResource("10_ckre7")]
+position = Vector2(944, -31)
+current_state = 1
+changes_state = true
+
+[node name="Adam5" parent="." instance=ExtResource("10_ckre7")]
+position = Vector2(282, -18)
+changes_state = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_xaeok")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="d_finished" from="Amelia-Dialogue/Dialogue" to="Amelia-Dialogue" method="_on_dialogue_d_finished"]
 [connection signal="body_entered" from="Amelia-Dialogue/chat_detection" to="Amelia-Dialogue" method="_on_chat_detection_body_entered"]
