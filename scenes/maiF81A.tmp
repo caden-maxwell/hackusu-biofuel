@@ -66,7 +66,9 @@ current_state = 2
 
 [node name="Amelia" parent="." instance=ExtResource("11_gmb33")]
 position = Vector2(216, -55)
-current_state = 3
+move_speed = 20.0
+walk_time = 2.0
+current_state = 0
 
 [node name="Adam" parent="." instance=ExtResource("10_ckre7")]
 position = Vector2(184, -45)
@@ -74,7 +76,9 @@ current_state = 3
 
 [node name="Amelia2" parent="." instance=ExtResource("11_gmb33")]
 position = Vector2(279, -195)
-current_state = 2
+move_speed = 20.0
+walk_time = 2.0
+current_state = 0
 
 [node name="Bob" parent="." instance=ExtResource("13_thmlp")]
 position = Vector2(441, 59)
