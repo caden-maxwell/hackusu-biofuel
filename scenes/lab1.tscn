@@ -4777,3 +4777,8 @@ layer_0/tile_data = PackedInt32Array(-131077, 65536, 14, -196602, 262144, 8, -13
 tile_set = SubResource("TileSet_r5x6n")
 format = 2
 layer_0/tile_data = PackedInt32Array(-196603, 720896, 268435491, -131067, 720896, 268435492, -65531, 720896, 268435493)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(63, 81, 63, 63, 16, 63, 16, -17, -80, -16, -80, -66, 49, -65, 49, -59, 78, -59, 79, -65, 128, -65, 128, 64, 81, 63, 81, 82, 151, 80, 146, -107, -92, -108, -92, -2, -1, 0, 0, 82)

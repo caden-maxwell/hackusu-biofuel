@@ -5436,3 +5436,8 @@ format = 2
 [node name="TileMap5" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7wobe")
 format = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-49, 101, -49, 80, -144, 80, -144, -49, -47, -49, -43, -27, -20, -27, -17, -48, 80, -49, 80, 80, -15, 81, -15, 99, -3, 96, -3, 88, 96, 88, 94, -82, 41, -91, -156, -85, -156, 94, -62, 92)

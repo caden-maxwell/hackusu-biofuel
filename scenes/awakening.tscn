@@ -4776,3 +4776,12 @@ layer_0/tile_data = PackedInt32Array(196604, 655362, 28, 262140, 655362, 29, 196
 tile_set = SubResource("TileSet_6ljvc")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131075, 524290, 34, -65539, 524290, 35, -131074, 720898, 35, -65538, 720898, 36, -2, 720898, 37, -196605, 65538, 14, 262147, 851970, 4, 196609, 851970, 4, 1, 851970, 4)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(80, -1, 66, -1, 65, -21, 64, -27, 64, -51, 64, -56, 64, -65, -63, -65, -64, 16, -65, 42, -22, 42, -21, 59, -64, 60, -64, 80, 64, 80, 64, 33, 80, 33, 90, 52, 85, 88, 53, 103, -21, 109, -87, 104, -92, 55, -110, -43, -84, -103, -3, -123, 79, -119, 114, -83, 101, -19)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PackedVector2Array(-47, -48, -16, -48, -16, -1, -47, -1, -47, -19)
