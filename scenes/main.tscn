@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpfxefvk5co8g"]
+[gd_scene load_steps=15 format=3 uid="uid://cpfxefvk5co8g"]
 
 [ext_resource type="PackedScene" uid="uid://pbviugntfmin" path="res://scenes/cafeteria.tscn" id="1_5detu"]
 [ext_resource type="PackedScene" uid="uid://c4oa04laaufqk" path="res://scenes/lobby.tscn" id="1_7yx6m"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dhd8g3ns2adlv" path="res://charScenes/adam.tscn" id="10_ckre7"]
 [ext_resource type="PackedScene" uid="uid://tbgpvk8oop16" path="res://charScenes/amelia.tscn" id="11_gmb33"]
 [ext_resource type="PackedScene" uid="uid://cr07g7lgnw6gl" path="res://charScenes/bob.tscn" id="13_thmlp"]
+[ext_resource type="AudioStream" uid="uid://4iw86a5n5dgt" path="res://assets/sounds/castle-unknown.ogg" id="14_nl3o7"]
 
 [node name="Main" type="Node2D"]
 
@@ -82,3 +83,8 @@ current_state = 2
 
 [node name="Bob2" parent="." instance=ExtResource("13_thmlp")]
 position = Vector2(426, 126)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_nl3o7")
+volume_db = -5.0
+autoplay = true

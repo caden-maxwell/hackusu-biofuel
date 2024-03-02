@@ -10,6 +10,10 @@ extends CharacterBody2D
 func _ready():
 	update_animation_param(starting_direction)
 
+func _input(event):
+	if event.is_action_pressed("attack"):
+		$HitSound.play()
+
 func _physics_process(_delta):
 	# input
 	var input_direction = Vector2(
