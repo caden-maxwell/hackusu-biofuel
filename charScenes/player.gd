@@ -25,8 +25,9 @@ func _physics_process(_delta):
 	pick_state()
 
 func update_animation_param(move_input : Vector2):
-	animation_tree.set("parameters/Idle/blend_position", move_input)
-	animation_tree.set("parameters/Run/blend_position", move_input)
+	if (move_input != Vector2.ZERO):
+		animation_tree.set("parameters/Idle/blend_position", move_input)
+		animation_tree.set("parameters/Run/blend_position", move_input)
 
 func pick_state():
 	if(velocity != Vector2.ZERO):
