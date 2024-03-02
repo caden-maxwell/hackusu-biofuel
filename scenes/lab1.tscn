@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://rr3x5jm3eaxl"]
+[gd_scene load_steps=16 format=3 uid="uid://rr3x5jm3eaxl"]
 
 [ext_resource type="Texture2D" uid="uid://dc585tyt62ms" path="res://assets/Modern_Office_Revamped/1_Room_Builder_Office/Room_Builder_Office_16x16.png" id="1_k66ty"]
 [ext_resource type="Texture2D" uid="uid://bf7iw03gxwu5v" path="res://assets/Modern_Office_Revamped/2_Modern_Office_Black_Shadow/Modern_Office_Black_Shadow.png" id="2_p0i2n"]
 [ext_resource type="Texture2D" uid="uid://dildaeoh11r3k" path="res://assets/Modern_Office_Revamped/3_Modern_Office_Shadowless/Modern_Office_Shadowless_16x16.png" id="3_g2gdi"]
-[ext_resource type="PackedScene" uid="uid://dadw8yb78v5qy" path="res://charScenes/player.tscn" id="4_ngab6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yx8k5"]
 texture = ExtResource("1_k66ty")
@@ -12621,10 +12620,3 @@ layer_0/tile_data = PackedInt32Array(-196603, 720896, 268435491, -131067, 720896
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(63, 81, 63, 63, 16, 63, 16, -17, -80, -16, -80, -66, 49, -65, 49, -59, 78, -59, 79, -65, 128, -65, 128, 64, 81, 63, 81, 82, 151, 80, 146, -107, -92, -108, -92, -2, -1, 0, 0, 82)
-
-[node name="Player" parent="." instance=ExtResource("4_ngab6")]
-position = Vector2(60, 16)
-rotation = -0.00113346
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_enabled = true

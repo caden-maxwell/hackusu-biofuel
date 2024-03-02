@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://e6f34x0dqupk" path="res://assets/characters/Robot_run_16x16.png" id="3_t1k4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acvkr"]
-size = Vector2(12, 4)
+size = Vector2(10, 4)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0dcr"]
 atlas = ExtResource("2_d6kd1")
