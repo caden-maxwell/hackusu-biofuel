@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpfxefvk5co8g"]
+[gd_scene load_steps=17 format=3 uid="uid://cpfxefvk5co8g"]
 
 [ext_resource type="PackedScene" uid="uid://pbviugntfmin" path="res://scenes/cafeteria.tscn" id="1_5detu"]
 [ext_resource type="PackedScene" uid="uid://c4oa04laaufqk" path="res://scenes/lobby.tscn" id="1_7yx6m"]
@@ -12,7 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://bj8l8p6e23o01" path="res://charScenes/alex.tscn" id="10_4xrhf"]
 [ext_resource type="PackedScene" uid="uid://dhd8g3ns2adlv" path="res://charScenes/adam.tscn" id="10_ckre7"]
 [ext_resource type="PackedScene" uid="uid://tbgpvk8oop16" path="res://charScenes/amelia.tscn" id="11_gmb33"]
+[ext_resource type="Script" path="res://charScenes/npcdialogue.gd" id="12_spsey"]
 [ext_resource type="PackedScene" uid="uid://cr07g7lgnw6gl" path="res://charScenes/bob.tscn" id="13_thmlp"]
+[ext_resource type="PackedScene" uid="uid://bh5v2l510hfkr" path="res://dialogue/dialogue.tscn" id="13_y3r1s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ku6ja"]
+radius = 31.0644
 
 [node name="Main" type="Node2D"]
 
@@ -64,9 +69,23 @@ position_smoothing_enabled = true
 position = Vector2(40, -91)
 current_state = 2
 
-[node name="Amelia" parent="." instance=ExtResource("11_gmb33")]
+[node name="Amelia-Dialogue" parent="." instance=ExtResource("11_gmb33")]
 position = Vector2(216, -55)
-current_state = 3
+script = ExtResource("12_spsey")
+
+[node name="Dialogue" parent="Amelia-Dialogue" instance=ExtResource("13_y3r1s")]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 38.0
+offset_bottom = 38.0
+
+[node name="chat_detection" type="Area2D" parent="Amelia-Dialogue"]
+position = Vector2(3, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Amelia-Dialogue/chat_detection"]
+position = Vector2(-1, 22)
+shape = SubResource("CircleShape2D_ku6ja")
+debug_color = Color(0.886275, 0.745098, 0.00784314, 0.419608)
 
 [node name="Adam" parent="." instance=ExtResource("10_ckre7")]
 position = Vector2(184, -45)
@@ -82,3 +101,7 @@ current_state = 2
 
 [node name="Bob2" parent="." instance=ExtResource("13_thmlp")]
 position = Vector2(426, 126)
+
+[connection signal="d_finished" from="Amelia-Dialogue/Dialogue" to="Amelia-Dialogue" method="_on_dialogue_d_finished"]
+[connection signal="body_entered" from="Amelia-Dialogue/chat_detection" to="Amelia-Dialogue" method="_on_chat_detection_body_entered"]
+[connection signal="body_exited" from="Amelia-Dialogue/chat_detection" to="Amelia-Dialogue" method="_on_chat_detection_body_exited"]

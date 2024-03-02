@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+var is_chatting = false
+var player
+var player_in_chat_zone = false
+
 enum CHAR_STATE { IDLE, RUN, SIT, DRINK }
 
 @export var move_speed : float = 20
@@ -13,14 +17,14 @@ enum CHAR_STATE { IDLE, RUN, SIT, DRINK }
 
 var move_direction : Vector2 = Vector2.ZERO
 
-
 func _ready():
 	pick_new_state(current_state)
 	move()
 
 func move():
-	select_new_direction()
-	timer.start(walk_time)
+	if !is_chatting:
+		select_new_direction()
+		timer.start(walk_time)
 
 func _physics_process(_delta):
 	if(current_state == CHAR_STATE.RUN):
@@ -57,6 +61,25 @@ func pick_new_state(state : CHAR_STATE):
 
 
 func _on_timer_timeout():
+	$Timer.wait_time = 0.5
 	move()
 
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		is_chatting = true
+		$Dialogue.start()
 
+func _on_chat_detection_body_entered(body):
+	if body.has_method("player"):
+		player = body
+		player_in_chat_zone = true
+
+
+func _on_chat_detection_body_exited(body):
+	if body.has_method("player"):
+		player_in_chat_zone = false
+
+
+func _on_dialogue_d_finished():
+	$Dialogue.visible = false
+	is_chatting = false
